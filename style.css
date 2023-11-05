@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+/* Text Typing Animation Styling */
+.wrapper {
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+.wrapper .first-text {
+  font-size: 60px;
+  color: #fff;
+}
+.wrapper .sec-texts {
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.sec-texts li {
+  position: relative;
+  top: 0;
+  font-size: 60px;
+  color: rgb(246, 40, 23);
+  list-style: none;
+  padding: 0 20px;
+  text-shadow: 0 0 10px rgb(246, 40, 23);
+  animation: slide 12s steps(4) infinite, colorful 6s infinite;
+}
+@keyframes slide {
+  100% {
+      top: -360px;
+  }
+}
+@keyframes colorful {
+  100% {
+      filter: hue-rotate(360deg);
+  }
+}
+.sec-texts li span {
+  position: relative;
+}
+.sec-texts li span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 400px;
+  height: 90px;
+  background: #000;
+  border-left: 2px solid rgb(246, 40, 23);
+  animation: typing 1.5s steps(10) infinite alternate;
+}
+@keyframes typing {
+  100% {
+      left: 100%;
+      margin: 0 -35px 0 35px;
+  }
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgb(246, 40, 23);
+    border-radius: 5px;
+    padding: 0 15px;
+    color: rgb(246, 40, 23);
+    font-size: 16px;
+    margin-top: 100px;
+}
+
+input:hover{
+  box-shadow: 0 0 10px rgb(246, 40, 23), inset 0 0 10px rgb(246, 40, 23);
+}
+
+input:focus{
+  box-shadow: 0 0 25px rgb(246, 40, 23), inset 0 0 25px rgb(246, 40, 23);
+  border: 2px solid rgb(246, 40, 23);
+}
+
+input::placeholder {
+    color: rgb(246, 40, 23);
+}
+input::selection{
+  background-color: rgb(246, 40, 23);
+  color: #fff;
+}
+
+/* Button styling */
+a{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 150px;
+  height: 50px;
+  background: #272729;
+  text-align: center;
+  border-radius: 40px;
+  line-height: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 1s;
+  overflow: hidden;
+}
+a:hover{
+  color: #fff;
+  box-shadow: -15px 0 50px rgb(193, 27, 23), 15px 0 50px rgb(253, 28, 3);
+  text-shadow: 0 0 10px rgba(255,255,255,0.50), 0 0 25px rgba(255,255,255,0.50),
+  0 0 35px rgba(255,255,255,0.50);
+}
+a::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(022,20,152,0);
+  filter: blur(4px);
+  transition: 5s;
+  z-index: -1;
+}
+a:hover::before{
+  background: rgb(246, 40, 23);
+  transform: scaleX(5);
+}
+a::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(122,0,255,0);
+  filter: blur(4px);
+  transition: 5s;
+  z-index: -1;
+}
+a:hover::after{
+  background: rgb(228, 34, 23);
+  transform: scaleX(5);
+}
+
